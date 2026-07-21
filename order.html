@@ -1,0 +1,256 @@
+<<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>داواکردنی کاڵا</title>
+
+    <!-- Kurdish Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+<section class="order">
+
+    <div class="order-container">
+
+        <!-- Back Button -->
+        <a href="goodman.html" class="back-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <!-- Header -->
+        <div class="order-header">
+
+            <h1>داواکردنی کاڵا</h1>
+
+            <p>
+                تکایە زانیارییەکانت بە دروستی پڕبکەرەوە
+            </p>
+
+        </div>
+
+        <!-- Form -->
+
+        <form id="orderForm">
+         
+            <div class="input-box">
+                <label>👤 ناوی تەواو</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="input-box">
+                <label>📞 ژمارەی تەلەفۆن</label>
+                <input type="tel" id="phone" required>
+            </div>
+    
+            <div class="input-box">
+                <label>📷 یوسەری ئینستاگرام</label>
+                <input type="text" id="instagram">
+            </div>
+
+            <div class="input-box">
+
+                <label>ئەو کاڵایەی داوات کردووە</label>
+
+                <select id="city" required>
+
+                    <option value="">کاڵاکەت هەڵبژێرە</option>
+
+                <option>چاویلکەی کڕۆم هێرتس</option>
+                <option>{Denim Tears} تاقمی هاوینی</option>
+                <option>{LA Edition} کڵاوی</option>
+                <option>{LA} کڵاوی</option>
+                <option>جلی هاوینە</option>
+                <option>جزدانی گۆیار</option>
+                <option>پێڵاوی بالێنسیوگا</option>
+                <option>{BAPE} تیشێرتی هاوینەی </option>
+                <option>سێتی هاوینەی سینا وۆرڵد</option>
+                <option>شۆرتی ئیسێنشەڵس</option>
+                
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>قەبارە</label>
+
+                <select id="city" required>
+
+                    <option value="">قەبارە هەڵبژێرە</option>
+
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>پێوەیستی نیە</option>
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>🏙️ شار</label>
+
+                <select id="city" required>
+
+                    <option value="">شار هەڵبژێرە</option>
+
+                    <option>هەولێر</option>
+                <option>سلێمانی</option>
+                <option>دهۆک</option>
+                <option>هەڵەبجە</option>
+                <option>ڕانیە</option>
+                <option>سۆران</option>
+                <option>ڕەواندز</option>
+                <option>کۆیە</option>
+                <option>چەمچەماڵ</option>
+                <option>ئاکرێ</option>
+                <option>زاخۆ</option>
+                    <option>بەغدا</option>
+                <option>بەسرە</option>
+                <option>موسڵ</option>
+                <option>کەرکوک</option>
+                <option>نەجەف</option>
+                <option>کەربەلا</option>
+                <option>دیوانیە</option>
+                <option>کوت</option>
+                <option>ناسیریە</option>
+                <option>سامەڕا</option>
+                <option>فەلوجە</option>
+                </select>
+
+            </div>
+            <div class="input-box">
+                <label>📍 ناونیشانی تەواو</label>
+                <textarea id="address" rows="3" required></textarea>
+            </div>
+
+            <div class="input-box">
+                <label>📝 تێبینی</label>
+                <textarea id="note" rows="4"></textarea>
+            </div>
+
+            <button class="order-btn" type="submit">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+             سکرینی فۆڕمەکە بکە و لە واتسئەپ بینێرە
+
+            </button>
+
+            
+        </form>
+    <!-- ========================= -->
+<!-- Shipping Rates Section -->
+<!-- ========================= -->
+
+<div class="shipping-card">
+
+    <button class="shipping-toggle" id="shippingToggle">
+
+        <div class="left">
+            <i class="fas fa-truck"></i>
+            <span>نرخی گەیاندن</span>
+        </div>
+
+        <i class="fas fa-chevron-down arrow" id="shippingArrow"></i>
+
+    </button>
+
+    <div class="shipping-content" id="shippingContent">
+
+        <input
+            type="text"
+            id="shippingSearch"
+            placeholder="🔍 گەڕان بە ناوی شار..."
+        >
+<div class="shipping-group">
+
+    <h3>🏔️ هەرێمی کوردستان</h3>
+
+    <div class="shipping-city"><span>📍 هەولێر</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 سۆران</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ڕەواندز</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 شەقڵاوە</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 مەخمور</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 کۆیە</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 هەریر</span><strong>5,000 IQD</strong></div>
+
+    <div class="shipping-city"><span>📍 سلێمانی</span><strong>3,000 IQD</strong></div>
+
+    <div class="shipping-city"><span>📍 چەمچەماڵ</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ڕانیە</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 قەڵادزێ</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 پێنجوێن</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 دوکان</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 دەربەندیخان</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 شارەزوور</span><strong>5,000 IQD</strong></div>
+
+    <div class="shipping-city"><span>📍 دهۆک</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 زاخۆ</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ئاکرێ</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 عەقرە</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ئامێدی</span><strong>5,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 سەمێل</span><strong>5,000 IQD</strong></div>
+
+    <div class="shipping-city"><span>📍 هەڵەبجە</span><strong>5,000 IQD</strong></div>
+
+</div>
+
+<div class="shipping-group">
+
+    <h3>🇮🇶 شارەکانی عێراق</h3>
+
+    <div class="shipping-city"><span>📍 بەغدا</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 موسڵ</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 کەرکووک</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 حەویجە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 داقوق</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 تەکریت</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 سامەڕا</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ڕەمادی</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 فلوجە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 بەعقوبە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 خانەقین</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 حیللە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 کەربەلا</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 نەجەف</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 کوفە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 کوتە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 دیوانیە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ساماوە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 ناسریە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 عمارە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 بەسرە</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 زبیر</span><strong>6,000 IQD</strong></div>
+    <div class="shipping-city"><span>📍 فاو</span><strong>6,000 IQD</strong></div>
+
+</div>
+
+</div>
+    </div>
+
+</section>
+
+<a href="https://wa.me/9647709543734" target="_blank" class="whatsapp-float">
+     <i class="fa-brands fa-whatsapp"></i>
+    <span>واتسئەپ</span>
+</a>
+<script src="order.js"></script>
+</body>
+</html>

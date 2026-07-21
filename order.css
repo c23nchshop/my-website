@@ -1,0 +1,488 @@
+
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans Arabic",sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    padding:25px;
+}
+
+/* ===========================
+   ORDER SECTION
+=========================== */
+
+.order{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.order-container{
+
+    width:100%;
+    max-width:650px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+
+    position:relative;
+
+    animation:fadeUp .7s ease;
+
+}
+
+/* ===========================
+   BACK BUTTON
+=========================== */
+
+.back-btn{
+
+    position:absolute;
+
+    top:25px;
+
+    right:25px;
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#F59E0B;
+
+    color:#111;
+
+    transform:translateX(-5px);
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.order-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.order-header h1{
+
+    color:#fff;
+
+    font-size:35px;
+
+    margin-bottom:10px;
+
+}
+
+.order-header p{
+
+    color:#cbd5e1;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-box{
+
+    margin-bottom:20px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+.input-box input,
+.input-box textarea,
+.input-box select{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:#1e293b;
+
+    color:#fff;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.input-box textarea{
+
+    resize:none;
+
+}
+
+.input-box input:focus,
+.input-box textarea:focus,
+.input-box select:focus{
+
+    border:2px solid #F59E0B;
+
+    box-shadow:0 0 18px rgba(245,158,11,.25);
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.order-btn{
+
+    width:100%;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.order-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 30px rgba(37,211,102,.35);
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.order-container{
+
+padding:25px;
+
+border-radius:20px;
+
+}
+
+.order-header h1{
+
+font-size:28px;
+
+}
+
+.back-btn{
+
+top:18px;
+
+right:18px;
+
+width:40px;
+
+height:40px;
+
+}
+
+.input-box input,
+.input-box textarea,
+.input-box select{
+
+padding:14px;
+
+font-size:15px;
+
+}
+
+.order-btn{
+
+font-size:16px;
+
+}
+
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    z-index: 999;
+    transition: 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(37,211,102,0.5);
+}
+
+.wa-icon {
+    font-size: 28px;
+}
+
+@media (max-width: 600px) {
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    .wa-icon {
+        font-size: 24px;
+    }
+}
+/* ========================= */
+/* Shipping Card */
+/* ========================= */
+
+.shipping-card{
+
+    margin-top:35px;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    border:1px solid #ececec;
+
+}
+
+.shipping-toggle{
+
+    width:100%;
+    border:none;
+    background:#fff;
+    padding:18px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+.shipping-toggle .left{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:18px;
+    font-weight:700;
+
+}
+
+.shipping-toggle i:first-child{
+
+    color:#16a34a;
+    font-size:24px;
+
+}
+
+.arrow{
+
+    transition:.35s;
+
+}
+
+.shipping-content{
+
+    max-height:0;
+    overflow:hidden;
+    transition:.45s;
+
+    padding:0 20px;
+
+}
+
+.shipping-content.show{
+
+    max-height:700px;
+    padding:20px;
+
+}
+
+#shippingSearch{
+
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    margin-bottom:18px;
+    font-size:15px;
+
+}
+
+.shipping-city{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 16px;
+
+    margin-bottom:10px;
+
+    background:#f8f8f8;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.shipping-city:hover{
+
+    background:#f1f5f9;
+    transform:translateX(-4px);
+
+}
+
+.shipping-city strong{
+
+    color:#16a34a;
+
+}
+
+@media(max-width:600px){
+
+.shipping-toggle{
+
+padding:16px;
+
+}
+
+.shipping-toggle .left{
+
+font-size:16px;
+
+}
+
+.shipping-city{
+
+font-size:14px;
+
+padding:13px;
+
+}
+
+}
+.shipping-group{
+    margin-top:25px;
+}
+
+.shipping-group h3{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#0f172a;
+    padding-bottom:8px;
+    border-bottom:2px solid #e5e7eb;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
