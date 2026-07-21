@@ -37,4 +37,32 @@ favorites.forEach(btn => {
     });
 
 });
+const translations = {
+  ku: {
+    title: "بەخێربێن بۆ C23NCH SHOP",
+    desc: "باشترین جلوبەرگ بە کوالێتی بەرز."
+  },
+  en: {
+    title: "Welcome to C23NCH SHOP",
+    desc: "Premium quality fashion with fast delivery."
+  },
+  ar: {
+    title: "مرحباً بكم في C23NCH SHOP",
+    desc: "أفضل الملابس بجودة عالية مع توصيل سريع."
+  }
+};
 
+function changeLanguage(lang) {
+  document.getElementById("title").textContent = translations[lang].title;
+  document.getElementById("desc").textContent = translations[lang].desc;
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ar" || lang === "ku") ? "rtl" : "ltr";
+
+  localStorage.setItem("language", lang);
+}
+
+window.onload = () => {
+  const savedLang = localStorage.getItem("language") || "ku";
+  changeLanguage(savedLang);
+};
