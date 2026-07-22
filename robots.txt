@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://haryadbarham123.github.io/my-website/sitemap.xml
+Sitemap: https://c23nchshop.github.io/my-website/sitemap.xml
