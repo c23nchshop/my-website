@@ -15,6 +15,7 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <section class="products" id="products">
@@ -935,4 +936,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     © 2026 All Rights Reserved
 </div>
 </body>
+<script>
+  // زانیارییەکانی دەرهێنراو لە بەشی Project Settings > API لە Supabase
+  const SUPABASE_URL = 'لێرە SUPABASE_URLەکەت بنووسە';
+  const SUPABASE_ANON_KEY = 'لێرە ANON_KEYەکەت بنووسە';
+  
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  async function fetchProducts() {
+    // هێنانی هەموو کاڵاکان لە داتابەیسەکە
+    const { data: products, error } = await supabase
+      .from('products')
+      .select('*');
+
+    if (error) {
+      console.error('هەڵە ڕوویدا:', error);
+      return;
+    }
+
+    const container = document.getElementById('products-container');
+    container.innerHTML = ''; // خاوێنکردنەوەی ناوەڕۆکەکە
+
+    // نیشاندانی کاڵاکان لەسەر وێبسایتەکەت
+    products.forEach(item => {
+      container.innerHTML += `
+        <div class="product-card">
+          <img src="${item.image_url}" alt="${item.title}" style="width:100%; border-radius:8px;">
+          <h3>${item.title}</h3>
+          <p>قەبارە: ${item.size}</p>
+          <span>نرخ: ${item.price}</span>
+        </div>
+      `;
+    });
+  }
+
+  // کارپێکردنی توانا لە کاتی باری لاپەڕەکە
+  fetchProducts();
+</script>
 </html>
