@@ -249,5 +249,38 @@
 
 
 <script src="order.js"></script>
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault(); // ڕاگرتنی ڕیفرێشی پەڕەکە
+
+    // 1. ژمارەی مۆبایلەکەی خۆت بێ + یان 0 لە سەرەتاوە بنووسە
+    var myPhoneNumber = "9647709543734"; // 👈 ئاگاداربە ژمارەی خۆتی تێدا بنووسە
+
+    // 2. وەرگرتنی زانیاری خانەکان
+    var name = document.getElementById('name') ? document.getElementById('name').value : '';
+    var phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+    var instagram = document.getElementById('instagram') ? document.getElementById('instagram').value : 'نییە';
+    var product = document.getElementById('product') ? document.getElementById('product').value : '';
+    var city = document.getElementById('city') ? document.getElementById('city').value : '';
+    var address = document.getElementById('address') ? document.getElementById('address').value : '';
+    var notes = document.getElementById('notes') ? document.getElementById('notes').value : 'نییە';
+
+    // 3. دروستکردنی دەقی پەیامەکە
+    var message = "کڕیارێکی نوێ داواکاری هەیە! 🛒\n\n" +
+                  "👤 *ناو:* " + name + "\n" +
+                  "📞 *ژمارەی مۆبایل:* " + phone + "\n" +
+                  "📸 *ئینستاگرام:* " + instagram + "\n" +
+                  "📦 *کاڵا:* " + product + "\n" +
+                  "🏙️ *شار:* " + city + "\n" +
+                  "📍 *ناونیشانی تەواو:* " + address + "\n" +
+                  "📝 *تێبینی:* " + notes;
+
+    // 4. ناردن بۆ واتسئاپ
+    var encodedMessage = encodeURIComponent(message);
+    var whatsappURL = "https://wa.me/" + myPhoneNumber + "?text=" + encodedMessage;
+
+    window.open(whatsappURL, '_blank');
+}
+</script>
 </body>
 </html>
