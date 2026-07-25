@@ -65,20 +65,20 @@
 
                 <label>ئەو کاڵایەی داوات کردووە</label>
 
-                <select id="city" required>
+                <select id="product" required>
 
                     <option value="">کاڵاکەت هەڵبژێرە</option>
 
-                <option>چاویلکەی کڕۆم هێرتس</option>
-                <option>{Denim Tears} تاقمی هاوینی</option>
-                <option>{LA Edition} کڵاوی</option>
-                <option>{LA} کڵاوی</option>
-                <option>جلی هاوینە</option>
-                <option>جزدانی گۆیار</option>
-                <option>پێڵاوی بالێنسیوگا</option>
-                <option>{BAPE} تیشێرتی هاوینەی </option>
-                <option>سێتی هاوینەی سینا وۆرڵد</option>
-                <option>شۆرتی ئیسێنشەڵس</option>
+                <option>Chrome heart glasses</option>
+                <option>Denim tears summer set</option>
+                <option>LA edition caps</option>
+                <option>LA caps</option>
+                <option>Summer fits جلی هاوینە</option>
+                <option>Goyard wallet</option>
+                <option>balenciaga shoes</option>
+                <option>Bape Summer T-Shirt</option>
+                <option>Syna World Summer Set</option>
+                <option>Essentiall shorts</option>
                 
 
                 </select>
@@ -89,14 +89,15 @@
 
                 <label>قەبارە</label>
 
-                <select id="city" required>
+                <select id="size" required>
 
                     <option value="">قەبارە هەڵبژێرە</option>
 
                 <option>S</option>
                 <option>M</option>
                 <option>L</option>
-                <option>XL</option>
+                <option>Xl</option>
+                <option>Xs</option>
                 <option>پێوەیستی نیە</option>
                 </select>
 
@@ -111,6 +112,7 @@
                     <option value="">شار هەڵبژێرە</option>
 
                     <option>هەولێر</option>
+                    <option>هەریر</option>
                 <option>سلێمانی</option>
                 <option>دهۆک</option>
                 <option>هەڵەبجە</option>
@@ -261,6 +263,7 @@ function sendToWhatsApp(event) {
     var phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
     var instagram = document.getElementById('instagram') ? document.getElementById('instagram').value : 'نییە';
     var product = document.getElementById('product') ? document.getElementById('product').value : '';
+    var size= document.getElementById('size') ? document.getElementById('size').value : '';
     var city = document.getElementById('city') ? document.getElementById('city').value : '';
     var address = document.getElementById('address') ? document.getElementById('address').value : '';
     var notes = document.getElementById('notes') ? document.getElementById('notes').value : 'نییە';
@@ -271,6 +274,7 @@ function sendToWhatsApp(event) {
                   "📞 *ژمارەی مۆبایل:* " + phone + "\n" +
                   "📸 *ئینستاگرام:* " + instagram + "\n" +
                   "📦 *کاڵا:* " + product + "\n" +
+                   "📦 *قەبارە:* " + size + "\n" +
                   "🏙️ *شار:* " + city + "\n" +
                   "📍 *ناونیشانی تەواو:* " + address + "\n" +
                   "📝 *تێبینی:* " + notes;
