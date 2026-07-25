@@ -39,30 +39,51 @@ favorites.forEach(btn => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("expandedImg");
-    const closeBtn = document.getElementById("closeBtn");
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
 
-    // گەڕان بەدوای هەموو وێنەکانی ناو سلایدەکان یان کاڵاکان
-    const productImages = document.querySelectorAll(".product-card img");
+    if (!searchBtn || !searchInput) return;
 
-    productImages.forEach(function(img) {
-        img.style.cursor = "pointer"; // نیشانەی ماوس دەگۆڕێت بۆ دەست کاتێک دەچێتە سەر وێنەکە
-        img.addEventListener("click", function() {
-            modal.style.display = "block";
-            modalImg.src = this.src; // وێنەی کراوە دەگوێزێتەوە بۆ پەنجەرە گەورەکە
-        });
-    });
-
-    // داخستنی پەنجەرەکە کاتێک کلیک لە (X) دەکرێت
-    closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-    });
-
-    // داخستنی پەنجەرەکە ئەگەر کڕیار لە دەرەوەی وێنەکەش کلیک بکات
-    modal.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
+    searchBtn.addEventListener('click', function() {
+        if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+            searchInput.style.display = 'inline-block';
+            searchInput.focus();
+        } else {
+            searchInput.style.display = 'none';
+            searchInput.value = '';
+            filterProducts('');
         }
     });
+
+    // فەنکشنێک بۆ چارەسەرکردنی کێشەی پیتە کوردی و عەرەبییەکان
+    function normalizeText(text) {
+        if (!text) return '';
+        return text.replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/أ/g, "ا").replace(/إ/g, "ا");
+    }
+
+    searchInput.addEventListener('input', function() {
+        let filterText = normalizeText(searchInput.value.toLowerCase().trim());
+        filterProducts(filterText);
+    });
+
+    function filterProducts(filterText) {
+        let products = document.querySelectorAll('.product-card'); 
+
+        products.forEach(function(product) {
+            // بەکارهێنانی textContent لەبری innerText بۆ ئەوەی هیچ نووسینێک لێی دەرباز نەبێت
+            let productText = normalizeText(product.textContent.toLowerCase());
+            
+            // ئەگەر نووسینەکە بەتاڵ نەبوو (واتە شتێک سێرچ کرا)
+            if (filterText !== "") {
+                if (productText.includes(filterText)) {
+                    product.style.display = ''; 
+                } else {
+                    product.style.display = 'none'; 
+                }
+            } else {
+                // ئەگەر بۆشایی سێرچەکە بەتاڵ بوو، هەموو کاڵاکان پیشان بدەرەوە
+                product.style.display = ''; 
+            }
+        });
+    }
 });
