@@ -47,17 +47,17 @@ function sendToWhatsApp(event) {
 
     // 3. دروستکردنی پەیامەکە
     const message =' کڕیارێکی نوێ داواکاری هەیە! 🛒\n\n' +
-                     '*ناو:* ${name}\n +'
-                     '*ژمارەی مۆبایل:* ${phone}\n +'
-                     '*ئینستاگرام:* ${instagram}\n +'
-                     '*کاڵا:* ${product}\n +'
-                     '*شار:* ${city}\n +'
-                     '*ناونیشانی تەواو:* ${address}\n +'
-                    ' *تێبینی:* ${notes};'
+                     ⁠`⁠*ناو:* ${name}\n +⁠`⁠
+                     ⁠`⁠*ژمارەی مۆبایل:* ${phone}\n +⁠`⁠
+                     ⁠`⁠*ئینستاگرام:* ${instagram}\n +⁠`⁠
+                     ⁠`⁠*کاڵا:* ${product}\n +⁠`⁠
+                     ⁠`⁠*شار:* ${city}\n +⁠`⁠
+                     ⁠`⁠*ناونیشانی تەواو:* ${address}\n +⁠`⁠
+                    ⁠`⁠ *تێبینی:* ${notes};⁠`⁠
 
     // 4. ناردن بۆ واتسئاپ
     const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = 'https://wa.me/${myPhoneNumber}?text=${encodedMessage}';
+    const whatsappURL = ⁠`⁠https://wa.me/${myPhoneNumber}?text=${encodedMessage}⁠⁠`⁠⁠;
 
     window.open(whatsappURL, '_blank');
 }
