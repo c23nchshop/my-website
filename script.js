@@ -115,3 +115,55 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+const buttons = document.querySelectorAll(".category-btn");
+const indicator = document.querySelector(".category-indicator");
+
+function moveIndicator(btn){
+
+    indicator.style.width = btn.offsetWidth + "px";
+    indicator.style.height = btn.offsetHeight + "px";
+
+    indicator.style.left = btn.offsetLeft + "px";
+    indicator.style.top = btn.offsetTop + "px";
+
+}
+
+moveIndicator(document.querySelector(".category-btn.active"));
+
+buttons.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        document
+        .querySelector(".category-btn.active")
+        .classList.remove("active");
+
+        btn.classList.add("active");
+
+        moveIndicator(btn);
+
+        const target=btn.dataset.target;
+
+        if(target==="all"){
+
+            document.querySelector(".products")
+            .scrollIntoView({behavior:"smooth"});
+
+        }else{
+
+            document.getElementById(target)
+            .scrollIntoView({behavior:"smooth"});
+
+        }
+
+    });
+
+});
+
+window.addEventListener("resize",()=>{
+
+    moveIndicator(document.querySelector(".category-btn.active"));
+
+});
+

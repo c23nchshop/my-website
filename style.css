@@ -1294,3 +1294,113 @@ h3 {
         font-size: 30px;
     }
 }
+.category-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    width:max-content;
+
+    max-width:100%;
+
+    margin:50px auto;
+
+    padding:10px;
+
+    border-radius:60px;
+
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.08);
+
+}
+
+.category-indicator{
+
+    position:absolute;
+
+    left:10px;
+
+    top:10px;
+
+    height:50px;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#111,#444);
+
+    transition:.35s ease;
+
+    z-index:0;
+
+}
+
+.category-btn{
+
+    position:relative;
+
+    z-index:2;
+
+    border:none;
+
+    background:none;
+
+    color:#333;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.category-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.category-btn.active{
+
+    color:white;
+
+}
+
+@media(max-width:768px){
+
+.category-wrapper{
+
+    width:95%;
+
+    justify-content:center;
+
+}
+
+.category-btn{
+
+    padding:13px 18px;
+
+    font-size:14px;
+
+}
+
+}
