@@ -1404,3 +1404,38 @@ h3 {
 }
 
 }
+.section-title-line{
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 70px 0 40px;
+}
+
+.section-title-line::before{
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to left,#f5b400,#ffffff33);
+}
+
+.section-title-line span{
+    margin-right: 20px;
+    padding: 12px 28px;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(245,180,0,.45);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    box-shadow: 0 8px 25px rgba(245,180,0,.18);
+    transition: .35s;
+}
+
+.section-title-line span:hover{
+    background: #f5b400;
+    color: #111;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(245,180,0,.45);
+}
